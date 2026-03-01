@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Definición del juego de caracteres y viewport para diseño responsivo -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing page - Clínica Piedrazul</title>
+  
+  <!-- Importación de Bootstrap para estilos y componentes base -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para iconos sociales y de navegación -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Toastify para notificaciones flotantes elegantes -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <!-- Estilos personalizados del proyecto -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Encabezado con información del perfil del profesional -->
+  <header>
+    <div class="container-fluid">
+      <div class="align-items-center">
+        <div class="profile-info">
+          <h1>Julian Stevan Camacho Rosero</h1>
+          <h3>Ingeniero de Sistemas</h3>
+          <p>Soy un Ingeniero de Sistemas especializado en el desarrollo de software y aplicaciones web.</p>
+
+          <!-- Enlaces a redes sociales -->
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/julian-camacho-inge" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/julianste15" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Barra de navegación principal -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#seccion1">Promociones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#seccion2">Médicos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#seccion3">Registro</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección de Promociones (Carrusel de imágenes) -->
+  <div class="container-fluid mt-5" id="seccion1">
+    <div id="carouselProductos" class="carousel slide mb-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="resources/carrusel.png" class="d-block w-100" alt="Promo 1">
+        </div>
+        <div class="carousel-item">
+          <img src="resources/carrusel2.jpg" class="d-block w-100" alt="Promo 2">
+        </div>
+        <div class="carousel-item">
+          <img src="resources/carrusel3.png" class="d-block w-100" alt="Promo 3">
+        </div>
+      </div>
+      <!-- Controles manuales del carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- SECCIÓN MÉDICOS: Muestra especialidades y tarjetas de médicos -->
+  <div class="container-fluid" id="seccion2">
+    <div class="row">
+
+      <!-- Barra lateral con lista de especialidades médicas -->
+      <aside class="col-12 col-sm-2 col-md-4 mb-4">
+        <h2>Especialidades</h2>
+        <ul class="list-group" id="lista-especialidades">
+          <li class="list-group-item list-group-item-action" style="cursor:pointer;" data-desc="Profesional enfocado en brindar terapias integrales para mejorar la salud física y mental.">Terapista</li>
+          <li class="list-group-item list-group-item-action" style="cursor:pointer;" data-desc="Especialidad enfocada en la rehabilitación funcional y recuperación de la movilidad a través de medios físicos.">Fisioterapia</li>
+          <li class="list-group-item list-group-item-action" style="cursor:pointer;" data-desc="Técnica de medicina alternativa para equilibrar el sistema nervioso autónomo y tratar dolores crónicos.">Terapia Neural</li>
+          <li class="list-group-item list-group-item-action" style="cursor:pointer;" data-desc="Profesión dedicada al diagnóstico y tratamiento de los trastornos del sistema musculoesquelético y columna vertebral.">Quiropraxia</li>
+          <li class="list-group-item list-group-item-action" style="cursor:pointer;" data-desc="Especialistas en la alimentación, nutrición humana y dietética clínica.">Nutricionista</li>
+          <li class="list-group-item list-group-item-action" style="cursor:pointer;" data-desc="Elaboración de planes y dietas terapéuticas para diversas patologías y recuperación.">Dietetica Terapeutica</li>
+        </ul>
+        <!-- Recuadro informativo dinámico para mostrar la descripción de la especialidad seleccionada -->
+        <div id="desc-box" class="alert alert-info d-none mt-3" role="alert"></div>
+      </aside>
+
+      <!-- Grid de tarjetas de médicos -->
+      <main class="col-12 col-sm-10 col-md-8">
+        <h2>Nuestros Médicos</h2>
+        <div class="row g-3">
+          <!-- Médico 1 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card border h-100">
+              <img src="resources/doctor.png" class="card-img-top img-fluid" alt="Dr. Carlos Alberto Ruiz">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">C. Ruiz</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Médico - Terapia Neural</h6>
+                <p class="card-text">Especialista en medicina alternativa para dolores crónicos.</p>
+                <button class="btn btn-primary mt-auto">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+          <!-- Médico 2 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card border h-100">
+              <img src="resources/doctor.png" class="card-img-top img-fluid" alt="Dra. Elena Gómez">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">E. Gómez</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Terapista - Fisioterapia</h6>
+                <p class="card-text">Rehabilitación física funcional y recuperación de la movilidad.</p>
+                <button class="btn btn-primary mt-auto">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+          <!-- Médico 3 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card border h-100">
+              <img src="resources/doctor.png" class="card-img-top img-fluid" alt="Dr. Santiago Valencia">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">S. Valencia</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Terapista - Quiropraxia</h6>
+                <p class="card-text">Experto en ajuste vertebral y salud del sistema nervioso.</p>
+                <button class="btn btn-primary mt-auto">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+          <!-- Médico 4 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card border h-100">
+              <img src="resources/doctor.png" class="card-img-top img-fluid" alt="Dra. Martha Lucía Castro">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">M. Castro</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Médico - Terapia Neural</h6>
+                <p class="card-text">Dedicada a la medicina holística para restablecer equilibrio.</p>
+                <button class="btn btn-primary mt-auto">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+          <!-- Médico 5 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card border h-100">
+              <img src="resources/doctor.png" class="card-img-top img-fluid" alt="Dr. Jorge Enrique López">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">J. López</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Terapista - Fisioterapia</h6>
+                <p class="card-text">Fisioterapia deportiva y recuperación muscular.</p>
+                <button class="btn btn-primary mt-auto">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+          <!-- Médico 6 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card border h-100">
+              <img src="resources/doctor.png" class="card-img-top img-fluid" alt="Dra. Sofia Mendez">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">S. Mendez</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Terapista - Quiropraxia</h6>
+                <p class="card-text">Comprometida con aliviar tensiones y mejorar salud postural.</p>
+                <button class="btn btn-primary mt-auto">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+          <!-- Médico 7 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card border h-100">
+              <img src="resources/doctor.png" class="card-img-top img-fluid" alt="Dr. Andrés Felipe">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">A. Felipe</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Nutricionista</h6>
+                <p class="card-text">Nutrición clínica y deportiva para mejorar tu rendimiento.</p>
+                <button class="btn btn-primary mt-auto">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+          <!-- Médico 8 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card border h-100">
+              <img src="resources/doctor.png" class="card-img-top img-fluid" alt="Dra. Laura Camila">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">L. Camila</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Dietetica Terapeutica</h6>
+                <p class="card-text">Especialista en dietas terapéuticas para patologías crónicas.</p>
+                <button class="btn btn-primary mt-auto">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- SECCIÓN DE REGISTRO: Formulario para nuevos usuarios -->
+  <div class="container-fluid my-5" id="seccion3">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <h2 class="text-center mb-4">Registro de Nuevos Usuarios</h2>
+        <p class="lead text-center">
+          Por favor, diligencie sus datos personales para registrarse en la clínica. <br>
+          Se utilizará su <strong>Correo Electrónico</strong> para confirmar su registro.
+        </p>
+
+        <!-- Formulario con validación personalizada vía JavaScript -->
+        <form id="formRegistroUsuario" class="bg-light p-4 rounded shadow-sm border" onsubmit="return validarFormularioNuevo(event)" novalidate>
+          <div class="mb-3">
+            <label for="nombres" class="form-label fw-bold">Nombres (*)</label>
+            <input type="text" id="nombres" name="nombres" class="form-control" placeholder="Sus nombres">
+            <div class="text-danger form-text d-none" id="errorNombres">Este campo es obligatorio.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="apellidos" class="form-label fw-bold">Apellidos (*)</label>
+            <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Sus apellidos">
+            <div class="text-danger form-text d-none" id="errorApellidos">Este campo es obligatorio.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="correo" class="form-label fw-bold">Correo Electrónico (Para confirmación) (*)</label>
+            <input type="email" id="correo" name="correo" class="form-control" placeholder="Ejemplo: correo@email.com">
+            <div class="text-danger form-text d-none" id="errorCorreo">Ingrese un correo válido.</div>
+          </div>
+
+          <!-- Selección de género mediante Radio Buttons -->
+          <fieldset class="mb-3">
+            <legend class="form-label fw-bold" style="font-size: 1rem;">Género (*)</legend>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="femenino" name="genero" value="femenino">
+              <label class="form-check-label" for="femenino">Femenino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="masculino" name="genero" value="masculino">
+              <label class="form-check-label" for="masculino">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="otro" name="genero" value="otro">
+              <label class="form-check-label" for="otro">Otro</label>
+            </div>
+            <div class="text-danger form-text d-none" id="errorGenero">Seleccione un género.</div>
+          </fieldset>
+
+          <!-- Aceptación de términos -->
+          <div class="mb-4">
+            <div class="form-check">
+              <input type="checkbox" id="terminos" class="form-check-input"> 
+              <label class="form-check-label" for="terminos">Acepto los términos y condiciones (*)</label>
+            </div>
+            <div class="text-danger form-text d-none" id="errorTerminos">Debe aceptar los términos.</div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button type="submit" id="btnRegistrarUsuario" class="btn btn-primary w-100 py-2 fw-bold">Registrar Usuario</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página con enlaces sociales e información institucional -->
+  <div class="container-fluid p-0 mt-5">
+    <footer class="text-center text-lg-start w-100" style="background-color: #160a711c;">
+      <div class="container d-flex justify-content-center py-5">
+        <a href="#" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #8c5fd0;">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #8c5fd0;">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+
+      <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2026 Copyright:
+        <a class="text-white" href="https://www.unicauca.edu.co/">Universidad del Cauca</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts: Bootstrap Bundle y Lógica personalizada -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="validacion.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <!-- Capas de Acceso a Datos y Servicios (Arquitectura en Capas) -->
+  <!-- 1. Entidades de Dominio -->
+  <script src="../capaDeAccesoADatos/entitys/Medico.js"></script>
+  <script src="../capaDeAccesoADatos/entitys/Paciente.js"></script>
+  <script src="../capaDeAccesoADatos/entitys/Cita.js"></script>
+
+  <!-- 2. Repositorios (Persistecia de datos) -->
+  <script src="../capaDeAccesoADatos/repositorios/MedicoRepository.js"></script>
+  <script src="../capaDeAccesoADatos/repositorios/PacienteRepository.js"></script>
+  <script src="../capaDeAccesoADatos/repositorios/CitaRepository.js"></script>
+
+  <!-- 3. Servicios / Fachadas (Lógica de negocio) -->
+  <script src="../fachadaServices/gestionarMedicosServices.js"></script>
+  <script src="../fachadaServices/gestionarPacientesServices.js"></script>
+  <script src="../fachadaServices/gestionarCitasServices.js"></script>
+ 
+  <!-- 4. Lógica de Vista (Controladores de la interfaz actual) -->
+  <script src="logicaMedico.js"></script>   
+  <script src="logicaPaciente.js"></script>
+  <script src="logicaCita.js"></script> 
+
+</body>
+</html>

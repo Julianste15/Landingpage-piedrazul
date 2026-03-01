@@ -1,0 +1,248 @@
+/* 
+    --- DISEÑO GENERAL ---
+    Configuración base de la fuente, fondo y reset de box models.
+*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Gris muy claro para el fondo */
+    overflow-x: hidden;
+}
+
+h2 {
+    color: #1e3c72; /* Azul profundo para títulos */
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* 
+    --- HEADER Y FOOTER ---
+    Uso de gradientes lineales y sombras para un look moderno y profesional.
+*/
+header, footer {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    padding: 70px 0;
+    position: relative;
+    border-bottom: 4px solid #4a90e2; /* Borde de acento azul claro */
+}
+
+footer {
+    border-top: 4px solid #4a90e2;
+}
+
+/* Contenedor del perfil profesional en el header */
+.profile-info {
+    text-align: center;
+}
+
+.profile-info h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.profile-info h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #cbdcf8;
+}
+
+.profile-info p {
+    font-size: 1.1rem;
+    color: #f1f5f9;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+/* 
+    --- ICONOS SOCIALES ---
+    Efectos de hover para mejorar la interacción.
+*/
+.social-icons a, footer a {
+    color: #d1e3ff !important;
+    margin: 0 10px;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.social-icons a:hover, footer a:hover {
+    color: #ffffff !important;
+    transform: translateY(-4px); /* Sutil elevación al hover */
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+footer .btn-floating {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border: none;
+    transition: 0.3s;
+}
+
+footer .btn-floating:hover {
+    background-color: #ffffff !important;
+    color: #1e3c72 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* 
+    --- SECCIONES E INTERCALADO ---
+    Diferenciación visual mediante colores de fondo suaves.
+*/
+#seccion1 {
+    background-color: #ffffff;
+    padding-bottom: 20px;
+}
+
+#seccion2 {
+    background-color: #f1f5f9; /* Fondo alterno */
+    padding: 60px 0;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#seccion3 {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+/* --- CARRUSEL --- */
+.carousel-inner img {
+    max-height: 400px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* 
+    --- TARJETAS (MÉDICOS) ---
+    Estilo moderno con sombras suaves y zoom en imágenes.
+*/
+.card {
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Estilo para la especialidad activa en la lista */
+.list-group-item.active {
+    background-color: #1e3c72 !important;
+    border-color: #1e3c72 !important;
+}
+
+/* 
+    --- FORMULARIOS (VISTA PREVIA DE OTROS MÓDULOS) ---
+    Estilos consistentes para inputs y botones.
+*/
+form#formMedico input[type="text"],
+form#formPaciente input[type="text"],
+form#formCitas input[type="date"],
+form#formCitas input[type="time"],
+form#formCitas select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-size: 15px;
+    background-color: #fcfdfd;
+}
+
+form#formMedico input[type="text"]:focus,
+form#formPaciente input[type="text"]:focus,
+form#formCitas input[type="date"]:focus,
+form#formCitas input[type="time"]:focus,
+form#formCitas select:focus {
+    border-color: #1e3c72;
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 60, 114, 0.3);
+    background-color: #ffffff;
+}
+
+form#formMedico button,
+form#formPaciente button,
+form#formCitas button {
+    background-color: #1e3c72;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+    width: 100%;
+}
+
+form#formMedico button:hover,
+form#formPaciente button:hover,
+form#formCitas button:hover {
+    background-color: #2a5298;
+    transform: scale(1.02);
+}
+
+/* 
+    --- TABLAS ---
+    Diseño limpio para visualización de datos.
+*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+table th, table td {
+    padding: 18px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+table th {
+    background-color: #1e3c72;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+table tr:hover {
+    background-color: #f1f5f9;
+}
