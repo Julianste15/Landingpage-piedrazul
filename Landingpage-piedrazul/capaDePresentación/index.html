@@ -19,19 +19,21 @@
 
 <body>
 
-  <!-- Encabezado con información del perfil del profesional -->
+  <!-- Encabezado con información de la clínica -->
   <header>
     <div class="container-fluid">
       <div class="align-items-center">
         <div class="profile-info">
-          <h1>Julian Stevan Camacho Rosero</h1>
-          <h3>Ingeniero de Sistemas</h3>
-          <p>Soy un Ingeniero de Sistemas especializado en el desarrollo de software y aplicaciones web.</p>
+          <h1>Clínica Piedrazul</h1>
+          <h3>Salud Integral y Bienestar</h3>
+          <p>Comprometidos con tu salud, brindando atención médica de alta calidad con un equipo de profesionales altamente calificados para tu cuidado y bienestar.</p>
 
-          <!-- Enlaces a redes sociales -->
+          <!-- Enlaces a redes sociales de la clínica -->
           <div class="social-icons">
-            <a href="https://www.linkedin.com/in/julian-camacho-inge" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/julianste15" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
       </div>
@@ -279,50 +281,43 @@
     </div>
   </div>
 
-  <!-- Pie de página con enlaces sociales e información institucional -->
-  <div class="container-fluid p-0 mt-5">
-    <footer class="text-center text-lg-start w-100" style="background-color: #160a711c;">
-      <div class="container d-flex justify-content-center py-5">
-        <a href="#" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #8c5fd0;">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #8c5fd0;">
-          <i class="fab fa-youtube"></i>
-        </a>
-      </div>
+  <!-- Pie de página con enlaces sociales e información de la clínica -->
+  <footer class="text-center text-lg-start w-100 mt-5">
+    <div class="container py-5">
+      <div class="row">
+        <!-- Columna de Información -->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase fw-bold mb-4">Clínica Piedrazul</h5>
+          <p>
+            Brindamos excelencia en servicios de salud integral, combinando tecnología de punta con calidez humana.
+            Popayán, Cauca.
+          </p>
+        </div>
 
-      <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2026 Copyright:
-        <a class="text-white" href="https://www.unicauca.edu.co/">Universidad del Cauca</a>
+        <!-- Columna de Redes Sociales -->
+        <div class="col-lg-6 col-md-12 text-center text-lg-end">
+          <h5 class="text-uppercase fw-bold mb-4">Síguenos</h5>
+          <div class="footer-social-icons">
+            <a href="#" class="btn btn-outline-light btn-floating m-1" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn btn-outline-light btn-floating m-1" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-outline-light btn-floating m-1" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="btn btn-outline-light btn-floating m-1" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
       </div>
-    </footer>
-  </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2026 Copyright:
+      <a class="text-white fw-bold" href="#">Clínica Piedrazul</a>
+    </div>
+  </footer>
 
   <!-- Scripts: Bootstrap Bundle y Lógica personalizada -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="validacion.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
-  <!-- Capas de Acceso a Datos y Servicios (Arquitectura en Capas) -->
-  <!-- 1. Entidades de Dominio -->
-  <script src="../capaDeAccesoADatos/entitys/Medico.js"></script>
-  <script src="../capaDeAccesoADatos/entitys/Paciente.js"></script>
-  <script src="../capaDeAccesoADatos/entitys/Cita.js"></script>
-
-  <!-- 2. Repositorios (Persistecia de datos) -->
-  <script src="../capaDeAccesoADatos/repositorios/MedicoRepository.js"></script>
-  <script src="../capaDeAccesoADatos/repositorios/PacienteRepository.js"></script>
-  <script src="../capaDeAccesoADatos/repositorios/CitaRepository.js"></script>
-
-  <!-- 3. Servicios / Fachadas (Lógica de negocio) -->
-  <script src="../fachadaServices/gestionarMedicosServices.js"></script>
-  <script src="../fachadaServices/gestionarPacientesServices.js"></script>
-  <script src="../fachadaServices/gestionarCitasServices.js"></script>
- 
-  <!-- 4. Lógica de Vista (Controladores de la interfaz actual) -->
-  <script src="logicaMedico.js"></script>   
-  <script src="logicaPaciente.js"></script>
-  <script src="logicaCita.js"></script> 
 
 </body>
 </html>
